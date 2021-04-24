@@ -1,19 +1,11 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StatusBar,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-} from "react-native";
+import { StatusBar, StyleSheet, Text, View, SafeAreaView } from "react-native";
 
-const isAndroid = Platform.OS === "android";
 export default function App() {
   return (
     <>
-      <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
+      <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.search}>
           <Text>Search</Text>
         </View>
@@ -27,6 +19,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  safeAreaView: { flex: 1, marginTop: StatusBar.currentHeight },
   search: {
     backgroundColor: "green",
     padding: 16,
